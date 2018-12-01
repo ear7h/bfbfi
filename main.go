@@ -25,9 +25,7 @@ func main() {
 	vm := VM{}
 	scn := bufio.NewScanner(reader)
 
-	fmt.Printf(prompt)
-	for scn.Scan() {
-		fmt.Printf(prompt)
+	for fmt.Printf(prompt); scn.Scan(); fmt.Printf(prompt) {
 		vm.Write(scn.Bytes())
 	}
 }
